@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 
 const AuthContext = createContext();
 
-const initialProfile = {
+const initialUser = {
   name: "",
   email: "",
   employee_id: "",
@@ -11,37 +11,36 @@ const initialProfile = {
 
 // PUBLIC_INTERFACE
 export function AuthProvider({ children }) {
+  // Authenticated if there is a user object in localStorage
   const [isAuthenticated, setIsAuthenticated] = useState(
-    !!localStorage.getItem("token")
+    !!localStorage.getItem("user")
   );
-  const [profile, setProfile] = useState(
-    JSON.parse(localStorage.getItem("profile")) || initialProfile
+  const [user, setUser] = useState(
+    JSON.parse(localStorage.getItem("user")) || initialUser
   );
 
   useEffect(() => {
     if (!isAuthenticated) {
-      setProfile(initialProfile);
+      setUser(initialUser);
     }
   }, [isAuthenticated]);
 
   // PUBLIC_INTERFACE
-  function login(token, profileData) {
+  function login(userObj) {
     setIsAuthenticated(true);
-    setProfile(profileData);
-    localStorage.setItem("token", token);
-    localStorage.setItem("profile", JSON.stringify(profileData));
+    setUser(userObj);
+    localStorage.setItem("user", JSON.stringify(userObj));
   }
 
   // PUBLIC_INTERFACE
   function logout() {
     setIsAuthenticated(false);
-    setProfile(initialProfile);
-    localStorage.removeItem("token");
-    localStorage.removeItem("profile");
+    setUser(initialUser);
+    localStorage.removeItem("user");
   }
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, profile, login, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, user, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

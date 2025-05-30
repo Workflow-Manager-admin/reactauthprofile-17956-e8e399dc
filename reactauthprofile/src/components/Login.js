@@ -40,26 +40,23 @@ export default function Login() {
         return;
       }
       resData = await res.json();
-      // Ensure the API response matches expected structure: { token, profile: { name, email, employee_id, contact_number } }
+      // Ensure the API response matches expected structure: { name, email, employee_id, contact_number }
       if (
         !resData ||
         typeof resData !== "object" ||
-        !resData.token ||
-        !resData.profile ||
-        typeof resData.profile !== "object" ||
-        typeof resData.profile.name !== "string" ||
-        typeof resData.profile.email !== "string" ||
-        typeof resData.profile.employee_id !== "string" ||
-        typeof resData.profile.contact_number !== "string"
+        typeof resData.name !== "string" ||
+        typeof resData.email !== "string" ||
+        typeof resData.employee_id !== "string" ||
+        typeof resData.contact_number !== "string"
       ) {
         setError("Invalid response from server");
         return;
       }
-      login(resData.token, {
-        name: resData.profile.name,
-        email: resData.profile.email,
-        employee_id: resData.profile.employee_id,
-        contact_number: resData.profile.contact_number,
+      login({
+        name: resData.name,
+        email: resData.email,
+        employee_id: resData.employee_id,
+        contact_number: resData.contact_number,
       });
       navigate("/profile");
     } catch (err) {
