@@ -19,10 +19,10 @@ export default function Profile() {
       <div className="profile-card">
         <h2>Profile</h2>
         <div className="profile-info">
-          <div><span className="profile-label">Name:</span> {profile.name}</div>
-          <div><span className="profile-label">Email:</span> {profile.email}</div>
-          <div><span className="profile-label">Employee ID:</span> {profile.employee_id}</div>
-          <div><span className="profile-label">Contact Number:</span> {profile.contact_number}</div>
+          <div><span className="profile-label">Name:</span> {profile?.name || ""}</div>
+          <div><span className="profile-label">Email:</span> {profile?.email || ""}</div>
+          <div><span className="profile-label">Employee ID:</span> {profile?.employee_id || ""}</div>
+          <div><span className="profile-label">Contact Number:</span> {profile?.contact_number || ""}</div>
         </div>
         <button className="logout-btn" onClick={handleLogout}>Logout</button>
       </div>

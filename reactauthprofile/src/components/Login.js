@@ -24,40 +24,46 @@ export default function Login() {
           body: JSON.stringify({ email, password }),
         }
       );
+      let resData = null;
       if (!res.ok) {
-        // Try to parse error message if present
-        let data;
+        // Always try to extract error message from response
         try {
-          data = await res.json();
+          resData = await res.json();
         } catch {
-          data = {};
+          resData = {};
         }
-        throw new Error(data?.error || "Login failed");
+        if (res.status === 401 && resData && resData.error) {
+          setError(resData.error);
+        } else {
+          setError(resData?.error || "Login failed");
+        }
+        return;
       }
-      const data = await res.json();
+      resData = await res.json();
       // Ensure the API response matches expected structure: { token, profile: { name, email, employee_id, contact_number } }
       if (
-        !data ||
-        typeof data !== "object" ||
-        !data.token ||
-        !data.profile ||
-        typeof data.profile !== "object" ||
-        typeof data.profile.name !== "string" ||
-        typeof data.profile.email !== "string" ||
-        typeof data.profile.employee_id !== "string" ||
-        typeof data.profile.contact_number !== "string"
+        !resData ||
+        typeof resData !== "object" ||
+        !resData.token ||
+        !resData.profile ||
+        typeof resData.profile !== "object" ||
+        typeof resData.profile.name !== "string" ||
+        typeof resData.profile.email !== "string" ||
+        typeof resData.profile.employee_id !== "string" ||
+        typeof resData.profile.contact_number !== "string"
       ) {
-        throw new Error("Invalid response from server");
+        setError("Invalid response from server");
+        return;
       }
-      login(data.token, {
-        name: data.profile.name,
-        email: data.profile.email,
-        employee_id: data.profile.employee_id,
-        contact_number: data.profile.contact_number,
+      login(resData.token, {
+        name: resData.profile.name,
+        email: resData.profile.email,
+        employee_id: resData.profile.employee_id,
+        contact_number: resData.profile.contact_number,
       });
       navigate("/profile");
     } catch (err) {
-      setError(err.message || "Something went wrong");
+      setError(err?.message || "Something went wrong");
     }
   }
 
