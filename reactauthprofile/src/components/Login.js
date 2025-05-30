@@ -35,8 +35,26 @@ export default function Login() {
         throw new Error(data?.error || "Login failed");
       }
       const data = await res.json();
-      // Assume API returns { token, profile: { name, email, employee_id, contact_number } }
-      login(data.token, data.profile);
+      // Ensure the API response matches expected structure: { token, profile: { name, email, employee_id, contact_number } }
+      if (
+        !data ||
+        typeof data !== "object" ||
+        !data.token ||
+        !data.profile ||
+        typeof data.profile !== "object" ||
+        typeof data.profile.name !== "string" ||
+        typeof data.profile.email !== "string" ||
+        typeof data.profile.employee_id !== "string" ||
+        typeof data.profile.contact_number !== "string"
+      ) {
+        throw new Error("Invalid response from server");
+      }
+      login(data.token, {
+        name: data.profile.name,
+        email: data.profile.email,
+        employee_id: data.profile.employee_id,
+        contact_number: data.profile.contact_number,
+      });
       navigate("/profile");
     } catch (err) {
       setError(err.message || "Something went wrong");
