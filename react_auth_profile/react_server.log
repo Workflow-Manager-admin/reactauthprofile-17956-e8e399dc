@@ -1,0 +1,191 @@
+
+> react-kavia@0.1.0 start
+> react-scripts start
+
+(node:531) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:531) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+Compiled successfully!
+
+You can now view react-kavia in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://172.17.0.2:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled successfully
+Failed to compile.
+
+Module not found: Error: Can't resolve '/home/kavia/workspace/code-generation/reactauthprofile-17956-e8e399dc/react_auth_profile/src/index.js' in '/home/kavia/workspace/code-generation/reactauthprofile-17956-e8e399dc/react_auth_profile'
+ERROR in main
+Module not found: Error: Can't resolve '/home/kavia/workspace/code-generation/reactauthprofile-17956-e8e399dc/react_auth_profile/src/index.js' in '/home/kavia/workspace/code-generation/reactauthprofile-17956-e8e399dc/react_auth_profile'
+
+ERROR in Error: Child compilation failed:
+  Module not found: Error: Can't resolve '/home/kavia/workspace/code-generation/  reactauthprofile-17956-e8e399dc/react_auth_profile/public/index.html' in '/hom  e/kavia/workspace/code-generation/reactauthprofile-17956-e8e399dc/react_auth_p  rofile'
+  ModuleNotFoundError: Module not found: Error: Can't resolve '/home/kavia/works  pace/code-generation/reactauthprofile-17956-e8e399dc/react_auth_profile/public  /index.html' in '/home/kavia/workspace/code-generation/reactauthprofile-17956-  e8e399dc/react_auth_profile'
+      at /home/kavia/workspace/code-generation/reactauthprofile-17956-e8e399dc/r  eact_auth_profile/node_modules/webpack/lib/Compilation.js:2123:28
+      at /home/kavia/workspace/code-generation/reactauthprofile-17956-e8e399dc/r  eact_auth_profile/node_modules/webpack/lib/NormalModuleFactory.js:923:13
+      at eval (eval at create (/home/kavia/workspace/code-generation/reactauthpr  ofile-17956-e8e399dc/react_auth_profile/node_modules/tapable/lib/HookCodeFacto  ry.js:33:10), <anonymous>:10:1)
+      at /home/kavia/workspace/code-generation/reactauthprofile-17956-e8e399dc/r  eact_auth_profile/node_modules/webpack/lib/NormalModuleFactory.js:339:22
+      at eval (eval at create (/home/kavia/workspace/code-generation/reactauthpr  ofile-17956-e8e399dc/react_auth_profile/node_modules/tapable/lib/HookCodeFacto  ry.js:33:10), <anonymous>:9:1)
+      at /home/kavia/workspace/code-generation/reactauthprofile-17956-e8e399dc/r  eact_auth_profile/node_modules/webpack/lib/NormalModuleFactory.js:520:22
+      at /home/kavia/workspace/code-generation/reactauthprofile-17956-e8e399dc/r  eact_auth_profile/node_modules/webpack/lib/NormalModuleFactory.js:151:10
+      at /home/kavia/workspace/code-generation/reactauthprofile-17956-e8e399dc/r  eact_auth_profile/node_modules/webpack/lib/NormalModuleFactory.js:783:25
+      at /home/kavia/workspace/code-generation/reactauthprofile-17956-e8e399dc/r  eact_auth_profile/node_modules/webpack/lib/NormalModuleFactory.js:1008:8
+      at /home/kavia/workspace/code-generation/reactauthprofile-17956-e8e399dc/r  eact_auth_profile/node_modules/webpack/lib/NormalModuleFactory.js:1137:5
+      at /home/kavia/workspace/code-generation/reactauthprofile-17956-e8e399dc/r  eact_auth_profile/node_modules/neo-async/async.js:6883:13
+      at /home/kavia/workspace/code-generation/reactauthprofile-17956-e8e399dc/r  eact_auth_profile/node_modules/webpack/lib/NormalModuleFactory.js:1120:45
+      at finishWithoutResolve (/home/kavia/workspace/code-generation/reactauthpr  ofile-17956-e8e399dc/react_auth_profile/node_modules/enhanced-resolve/lib/Reso  lver.js:567:11)
+      at /home/kavia/workspace/code-generation/reactauthprofile-17956-e8e399dc/r  eact_auth_profile/node_modules/enhanced-resolve/lib/Resolver.js:656:15
+      at /home/kavia/workspace/code-generation/reactauthprofile-17956-e8e399dc/r  eact_auth_profile/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+      at eval (eval at create (/home/kavia/workspace/code-generation/reactauthpr  ofile-17956-e8e399dc/react_auth_profile/node_modules/tapable/lib/HookCodeFacto  ry.js:33:10), <anonymous>:16:1)
+      at /home/kavia/workspace/code-generation/reactauthprofile-17956-e8e399dc/r  eact_auth_profile/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+      at eval (eval at create (/home/kavia/workspace/code-generation/reactauthpr  ofile-17956-e8e399dc/react_auth_profile/node_modules/tapable/lib/HookCodeFacto  ry.js:33:10), <anonymous>:16:1)
+      at /home/kavia/workspace/code-generation/reactauthprofile-17956-e8e399dc/r  eact_auth_profile/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+      at eval (eval at create (/home/kavia/workspace/code-generation/reactauthpr  ofile-17956-e8e399dc/react_auth_profile/node_modules/tapable/lib/HookCodeFacto  ry.js:33:10), <anonymous>:15:1)
+      at /home/kavia/workspace/code-generation/reactauthprofile-17956-e8e399dc/r  eact_auth_profile/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+      at eval (eval at create (/home/kavia/workspace/code-generation/reactauthpr  ofile-17956-e8e399dc/react_auth_profile/node_modules/tapable/lib/HookCodeFacto  ry.js:33:10), <anonymous>:16:1)
+      at /home/kavia/workspace/code-generation/reactauthprofile-17956-e8e399dc/r  eact_auth_profile/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+      at eval (eval at create (/home/kavia/workspace/code-generation/reactauthpr  ofile-17956-e8e399dc/react_auth_profile/node_modules/tapable/lib/HookCodeFacto  ry.js:33:10), <anonymous>:16:1)
+      at /home/kavia/workspace/code-generation/reactauthprofile-17956-e8e399dc/r  eact_auth_profile/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+      at eval (eval at create (/home/kavia/workspace/code-generation/reactauthpr  ofile-17956-e8e399dc/react_auth_profile/node_modules/tapable/lib/HookCodeFacto  ry.js:33:10), <anonymous>:16:1)
+      at /home/kavia/workspace/code-generation/reactauthprofile-17956-e8e399dc/r  eact_auth_profile/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+      at eval (eval at create (/home/kavia/workspace/code-generation/reactauthpr  ofile-17956-e8e399dc/react_auth_profile/node_modules/tapable/lib/HookCodeFacto  ry.js:33:10), <anonymous>:16:1)
+      at /home/kavia/workspace/code-generation/reactauthprofile-17956-e8e399dc/r  eact_auth_profile/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+      at eval (eval at create (/home/kavia/workspace/code-generation/reactauthpr  ofile-17956-e8e399dc/react_auth_profile/node_modules/tapable/lib/HookCodeFacto  ry.js:33:10), <anonymous>:15:1)
+      at /home/kavia/workspace/code-generation/reactauthprofile-17956-e8e399dc/r  eact_auth_profile/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:4  1:15
+      at process.processTicksAndRejections (node:internal/process/task_queues:81  :21)
+  
+  - Compilation.js:2123 
+    [react_auth_profile]/[webpack]/lib/Compilation.js:2123:28
+  
+  - NormalModuleFactory.js:923 
+    [react_auth_profile]/[webpack]/lib/NormalModuleFactory.js:923:13
+  
+  
+  - NormalModuleFactory.js:339 
+    [react_auth_profile]/[webpack]/lib/NormalModuleFactory.js:339:22
+  
+  
+  - NormalModuleFactory.js:520 
+    [react_auth_profile]/[webpack]/lib/NormalModuleFactory.js:520:22
+  
+  - NormalModuleFactory.js:151 
+    [react_auth_profile]/[webpack]/lib/NormalModuleFactory.js:151:10
+  
+  - NormalModuleFactory.js:783 
+    [react_auth_profile]/[webpack]/lib/NormalModuleFactory.js:783:25
+  
+  - NormalModuleFactory.js:1008 
+    [react_auth_profile]/[webpack]/lib/NormalModuleFactory.js:1008:8
+  
+  - NormalModuleFactory.js:1137 
+    [react_auth_profile]/[webpack]/lib/NormalModuleFactory.js:1137:5
+  
+  - async.js:6883 
+    [react_auth_profile]/[neo-async]/async.js:6883:13
+  
+  - NormalModuleFactory.js:1120 
+    [react_auth_profile]/[webpack]/lib/NormalModuleFactory.js:1120:45
+  
+  - Resolver.js:567 finishWithoutResolve
+    [react_auth_profile]/[enhanced-resolve]/lib/Resolver.js:567:11
+  
+  - Resolver.js:656 
+    [react_auth_profile]/[enhanced-resolve]/lib/Resolver.js:656:15
+  
+  - Resolver.js:718 
+    [react_auth_profile]/[enhanced-resolve]/lib/Resolver.js:718:5
+  
+  
+  - Resolver.js:718 
+    [react_auth_profile]/[enhanced-resolve]/lib/Resolver.js:718:5
+  
+  
+  - Resolver.js:718 
+    [react_auth_profile]/[enhanced-resolve]/lib/Resolver.js:718:5
+  
+  
+  - Resolver.js:718 
+    [react_auth_profile]/[enhanced-resolve]/lib/Resolver.js:718:5
+  
+  
+  - Resolver.js:718 
+    [react_auth_profile]/[enhanced-resolve]/lib/Resolver.js:718:5
+  
+  
+  - Resolver.js:718 
+    [react_auth_profile]/[enhanced-resolve]/lib/Resolver.js:718:5
+  
+  
+  - Resolver.js:718 
+    [react_auth_profile]/[enhanced-resolve]/lib/Resolver.js:718:5
+  
+  
+  - Resolver.js:718 
+    [react_auth_profile]/[enhanced-resolve]/lib/Resolver.js:718:5
+  
+  
+  - DirectoryExistsPlugin.js:41 
+    [react_auth_profile]/[enhanced-resolve]/lib/DirectoryExistsPlugin.js:41:15
+  
+  - task_queues:81 process.processTicksAndRejections
+    node:internal/process/task_queues:81:21
+  
+  - child-compiler.js:211 
+    [react_auth_profile]/[html-webpack-plugin]/lib/child-compiler.js:211:18
+  
+  - Compiler.js:629 finalCallback
+    [react_auth_profile]/[webpack]/lib/Compiler.js:629:5
+  
+  - Compiler.js:664 
+    [react_auth_profile]/[webpack]/lib/Compiler.js:664:11
+  
+  - Compiler.js:1350 
+    [react_auth_profile]/[webpack]/lib/Compiler.js:1350:17
+  
+  
+  - Hook.js:18 Hook.CALL_ASYNC_DELEGATE [as _callAsync]
+    [react_auth_profile]/[tapable]/lib/Hook.js:18:14
+  
+  - Compiler.js:1346 
+    [react_auth_profile]/[webpack]/lib/Compiler.js:1346:33
+  
+  - Compilation.js:2938 finalCallback
+    [react_auth_profile]/[webpack]/lib/Compilation.js:2938:11
+  
+  - Compilation.js:3251 
+    [react_auth_profile]/[webpack]/lib/Compilation.js:3251:11
+  
+  
+  - Hook.js:18 Hook.CALL_ASYNC_DELEGATE [as _callAsync]
+    [react_auth_profile]/[tapable]/lib/Hook.js:18:14
+  
+  - Compilation.js:3244 
+    [react_auth_profile]/[webpack]/lib/Compilation.js:3244:38
+  
+  
+  - Compilation.js:540 
+    [react_auth_profile]/[webpack]/lib/Compilation.js:540:10
+  
+  - SourceMapDevToolPlugin.js:607 
+    [react_auth_profile]/[webpack]/lib/SourceMapDevToolPlugin.js:607:10
+  
+  - async.js:2830 
+    [react_auth_profile]/[neo-async]/async.js:2830:7
+  
+  - async.js:2857 Object.each
+    [react_auth_profile]/[neo-async]/async.js:2857:9
+  
+  - SourceMapDevToolPlugin.js:423 
+    [react_auth_profile]/[webpack]/lib/SourceMapDevToolPlugin.js:423:17
+  
+  - async.js:2830 
+    [react_auth_profile]/[neo-async]/async.js:2830:7
+
+1 ERROR in child compilations (Use 'stats.children: true' resp. '--stats-children' for more details)
+webpack compiled with 3 errors
