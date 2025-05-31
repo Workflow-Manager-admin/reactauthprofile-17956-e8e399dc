@@ -3,10 +3,8 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 const AuthContext = createContext();
 
 const initialUser = {
-  name: "",
-  email: "",
-  employee_id: "",
-  contact_number: "",
+  // Holds only the user_id, profile data comes from /api/profile
+  user_id: "",
 };
 
 // PUBLIC_INTERFACE
