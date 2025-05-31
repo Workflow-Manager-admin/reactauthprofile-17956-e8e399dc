@@ -40,41 +40,23 @@ export default function Login() {
         return;
       }
       resData = await res.json();
-      // Expecting: { token: string, expires_in: number }
+      // Expecting: { token: string, expires_in: number, user_id: string }
       if (
         !resData ||
         typeof resData !== "object" ||
         typeof resData.token !== "string" ||
-        typeof resData.expires_in !== "number"
+        typeof resData.expires_in !== "number" ||
+        typeof resData.user_id !== "string"
       ) {
         setError("Invalid response from server");
         return;
       }
 
-      // Decode JWT to extract basic profile if available (optional)
-      let decodedProfile = {};
-      try {
-        const payload = JSON.parse(
-          atob(resData.token.split(".")[1].replace(/-/g, "+").replace(/_/g, "/"))
-        );
-        // Optionally pull profile fields from JWT claims
-        decodedProfile = {
-          name: payload.name || "",
-          email: payload.email || "",
-          employee_id: payload.employee_id || "",
-          contact_number: payload.contact_number || "",
-        };
-      } catch {
-        decodedProfile = { name: "", email: "", employee_id: "", contact_number: "" };
-      }
-
-      // Store token & expiry for later use and pass profile info to context
+      // Store token, expiry, and user_id for later use
       login(
-        {
-          ...decodedProfile,
-        },
         resData.token,
-        Date.now() + resData.expires_in * 1000
+        Date.now() + resData.expires_in * 1000,
+        resData.user_id
       );
       navigate("/profile");
     } catch (err) {
