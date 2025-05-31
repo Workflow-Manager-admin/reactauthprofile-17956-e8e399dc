@@ -16,7 +16,9 @@ export function AuthProvider({ children }) {
     return !!(token && expiry && Date.now() < expiry);
   }
   function getUser() {
-    return JSON.parse(localStorage.getItem("user")) || initialUser;
+    // For this pattern, "user" is { user_id }
+    const userString = localStorage.getItem("user");
+    return userString ? JSON.parse(userString) : initialUser;
   }
 
   const [isAuthenticated, setIsAuthenticated] = useState(getIsAuthenticated());
@@ -29,10 +31,10 @@ export function AuthProvider({ children }) {
   }, [isAuthenticated]);
 
   // PUBLIC_INTERFACE
-  function login(userObj, token, tokenExpiry) {
+  function login(token, tokenExpiry, user_id) {
     setIsAuthenticated(true);
-    setUser(userObj);
-    localStorage.setItem("user", JSON.stringify(userObj));
+    setUser({ user_id }); // only store user_id
+    localStorage.setItem("user", JSON.stringify({ user_id }));
     localStorage.setItem("token", token);
     localStorage.setItem("token_expiry", tokenExpiry);
   }
