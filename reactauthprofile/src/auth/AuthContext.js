@@ -11,13 +11,18 @@ const initialUser = {
 
 // PUBLIC_INTERFACE
 export function AuthProvider({ children }) {
-  // Authenticated if there is a user object in localStorage
-  const [isAuthenticated, setIsAuthenticated] = useState(
-    !!localStorage.getItem("user")
-  );
-  const [user, setUser] = useState(
-    JSON.parse(localStorage.getItem("user")) || initialUser
-  );
+  // Determine authentication by token and expiry
+  function getIsAuthenticated() {
+    const token = localStorage.getItem("token");
+    const expiry = Number(localStorage.getItem("token_expiry") || "0");
+    return !!(token && expiry && Date.now() < expiry);
+  }
+  function getUser() {
+    return JSON.parse(localStorage.getItem("user")) || initialUser;
+  }
+
+  const [isAuthenticated, setIsAuthenticated] = useState(getIsAuthenticated());
+  const [user, setUser] = useState(getUser());
 
   useEffect(() => {
     if (!isAuthenticated) {
@@ -26,10 +31,12 @@ export function AuthProvider({ children }) {
   }, [isAuthenticated]);
 
   // PUBLIC_INTERFACE
-  function login(userObj) {
+  function login(userObj, token, tokenExpiry) {
     setIsAuthenticated(true);
     setUser(userObj);
     localStorage.setItem("user", JSON.stringify(userObj));
+    localStorage.setItem("token", token);
+    localStorage.setItem("token_expiry", tokenExpiry);
   }
 
   // PUBLIC_INTERFACE
@@ -37,7 +44,32 @@ export function AuthProvider({ children }) {
     setIsAuthenticated(false);
     setUser(initialUser);
     localStorage.removeItem("user");
+    localStorage.removeItem("token");
+    localStorage.removeItem("token_expiry");
   }
+
+  // Optionally, handle automatic logout on token expiry
+  useEffect(() => {
+    let timeoutId;
+    if (isAuthenticated) {
+      const expiry = Number(localStorage.getItem("token_expiry") || "0");
+      if (expiry) {
+        const remaining = expiry - Date.now();
+        if (remaining > 0) {
+          timeoutId = setTimeout(() => {
+            logout();
+          }, remaining);
+        } else {
+          logout();
+        }
+      }
+    }
+    return () => {
+      if (timeoutId) clearTimeout(timeoutId);
+    };
+    // We want to re-run this when authentication state or expiry changes
+    // eslint-disable-next-line
+  }, [isAuthenticated]);
 
   return (
     <AuthContext.Provider value={{ isAuthenticated, user, login, logout }}>
