@@ -1,9 +1,11 @@
 :root {
-  --primary: #2c2a4a;
-  --secondary: #898bd2;
-  --accent: #7fdeff;
-  --bg: #f6f8fb;
-  --error: #e5484d;
+  /* Nord Theme mapping */
+  --primary: #5e81ac;           /* Nord10 */
+  --secondary: #81a1c1;         /* Nord9 */
+  --accent: #8fbcbb;            /* Nord7 */
+  --bg: #2e3440;                /* Nord0 */
+  --error: #bf616a;             /* Nord11 */
+  --text: #d8dee9;              /* Nord4 */
 }
 
 body {

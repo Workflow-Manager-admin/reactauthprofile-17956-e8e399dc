@@ -3,12 +3,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--bg);
+  background: var(--bg); /* Nord0 */
 }
+
 .login-card {
-  background: #fff;
+  background: var(--nord1, #3b4252);
   border-radius: 14px;
-  box-shadow: 0 4px 24px rgba(44,42,74,0.08);
+  box-shadow: 0 4px 24px rgba(76,86,106,0.18); /* Nord3 */
   padding: 2rem 2rem 1.5rem 2rem;
   min-width: 320px;
   max-width: 90vw;
@@ -35,14 +36,17 @@
 }
 .login-field input {
   padding: 0.6rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--nord3, #4c566a);
+  background: var(--nord0, #2e3440);
+  color: var(--text, #d8dee9);
   border-radius: 6px;
   font-size: 1rem;
 }
+
 .login-btn {
   margin-top: 0.7rem;
   background: var(--primary);
-  color: #fff;
+  color: var(--text, #d8dee9);
   font-weight: 600;
   border: none;
   border-radius: 6px;
@@ -52,10 +56,13 @@
 }
 .login-btn:hover {
   background: var(--secondary);
+  color: var(--bg, #2e3440);
 }
+
 .login-error {
   color: var(--error);
-  background: #ffeaea;
+  background: var(--nord11, #bf616a);
+  opacity: 0.88;
   font-size: 1rem;
   margin-bottom: 1rem;
   border-radius: 6px;
