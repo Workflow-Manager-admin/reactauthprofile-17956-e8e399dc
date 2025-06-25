@@ -44,10 +44,7 @@ module.exports = (env = {}) => ({
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html',
-      templateParameters: {
-        PUBLIC_URL: '',
-      },
+      template: './public/index.html'
     }),
   ],
   mode: env.production ? 'production' : 'development',

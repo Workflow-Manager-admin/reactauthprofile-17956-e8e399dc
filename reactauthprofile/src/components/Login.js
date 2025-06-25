@@ -66,6 +66,9 @@ export default function Login() {
 
   return (
     <div className="login-container">
+      <div className="login-header" style={{ textAlign: "center", marginBottom: "1rem" }}>
+        <h1 style={{ margin: 0 }}>Employee Portal</h1>
+      </div>
       <form className="login-card" onSubmit={handleSubmit}>
         <h2>Login</h2>
         {error && <div className="login-error">{error}</div>}
@@ -97,6 +100,15 @@ export default function Login() {
           Sign In
         </button>
       </form>
+      </form>
+      <footer className="login-footer" style={{
+        textAlign: "center",
+        marginTop: "2rem",
+        color: "#888",
+        fontSize: "0.97rem"
+      }}>
+        © {new Date().getFullYear()} Powered by KAVIA – Employee Portal System
+      </footer>
     </div>
   );
 }
